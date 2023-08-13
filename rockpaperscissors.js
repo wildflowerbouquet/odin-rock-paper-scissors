@@ -10,3 +10,14 @@ Print overall winner.
 
 
 */
+
+
+
+function getComputerChoice() {
+    const min = 1;
+    const max = 3;
+
+    console.log(Math.floor(Math.random()*(max-min+1)+min));
+}
+
+getComputerChoice();
