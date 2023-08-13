@@ -17,7 +17,15 @@ function getComputerChoice() {
     const min = 1;
     const max = 3;
 
-    console.log(Math.floor(Math.random()*(max-min+1)+min));
+    const choice = (Math.floor(Math.random()*(max-min+1)+min));
+
+    if (choice === 1) {
+        return "Rock";
+    } else if (choice === 2) {
+        return "Paper";
+    } else if (choice === 3) {
+        return "Scissors";
+    }
 }
 
-getComputerChoice();
+console.log(getComputerChoice());
