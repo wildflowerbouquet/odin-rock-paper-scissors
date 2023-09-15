@@ -17,7 +17,7 @@ function getComputerChoice() {
     const min = 1;
     const max = 3;
 
-    const x = (Math.floor(Math.random()*(max-min+1)+min));
+    let x = (Math.floor(Math.random()*(max-min+1)+min));
 
     if (x === 1) {
         return "rock";
@@ -28,7 +28,12 @@ function getComputerChoice() {
     }
 }
 
-function playRound(playerSelection, computerSelection) {
+let playerSelection = prompt("Rock, Paper, or Scissors?");
+;
+let computerSelection = getComputerChoice();
+
+function playRound() {
+    
     if (playerSelection.toLowerCase() === "rock" && computerSelection === "rock") {
         return "You both chose Rock. It's a tie!";
     } else if (playerSelection.toLowerCase() === "rock" && computerSelection === "paper") {
@@ -48,9 +53,66 @@ function playRound(playerSelection, computerSelection) {
     } else if (playerSelection.toLowerCase() === "scissors" && computerSelection === "paper") {
         return "You win! Scissors beats Paper!";
     }
+
+}    
+
+let result = playRound(); 
+
+function score() { 
+    if (result.charAt(4) === "w") {
+       return 1;
+    } else if (result.charAt(4) === "l") {
+        return -1;
+    } else {
+       return 0;
+    }
 }
 
-const playerSelection = prompt("Rock, Paper, or Scissors?");
-const computerSelection = getComputerChoice();
+let round1 = score();
 
-console.log(playRound(playerSelection, computerSelection));
+let round2 = score() + round1;
+
+let round3 = score() + round2;
+
+let round4 = score() + round3;
+
+let round5 = score() + round4;
+
+let total = round5;
+    
+function game() {
+
+    prompt("Rock, Paper, or Scissors?");
+
+    playRound();
+    console.log(result);
+    console.log(round1);
+
+    prompt("Rock, Paper, or Scissors?");
+
+    playRound();
+    console.log(result);
+    console.log(round2);
+    
+    prompt("Rock, Paper, or Scissors?");
+
+    playRound();
+    console.log(result);
+    console.log(round3);
+
+    prompt("Rock, Paper, or Scissors?");
+
+    playRound();
+    console.log(result);
+    console.log(round4);
+
+    prompt("Rock, Paper, or Scissors?");
+
+    playRound();
+    console.log(result);
+    console.log(round5);
+
+    console.log(total);
+}
+
+game();
